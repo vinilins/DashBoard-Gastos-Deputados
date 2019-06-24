@@ -22,7 +22,7 @@ colors = {
 
 site = {
     'width': '1366px',
-    'height': '1000px',
+    'height': '1180px',
     'margin-top': 0,
     'margin-left': 'auto',
     'margin-bottom': 0,
