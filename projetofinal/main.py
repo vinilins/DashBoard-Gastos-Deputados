@@ -483,9 +483,13 @@ def update_image_src(image_path):
 
 
 def df_datalist(nome,ano):
-    arquivo = open('desc/nome-'+str(ano)+'.txt', 'r')
-    lista_nomes = arquivo.readlines()
-    controle = False
+    if str(nome) != 'None':
+        arquivo = open('desc/nome-'+str(ano)+'.txt', 'r')
+        lista_nomes = arquivo.readlines()
+        controle = False
+    else:
+        return pd.DataFrame({ 'Descricao': [],
+                            'Valor Gasto': []})
     for i in range(len(lista_nomes)):
         if lista_nomes[i] == nome+'\n':
             ind = i
@@ -504,6 +508,10 @@ def df_datalist(nome,ano):
         df = pd.DataFrame({ 'Descricao': lista_desc,
                             'Valor Gasto': lista_valores})
         return df
+    else:
+        return pd.DataFrame({ 'Descricao': [],
+                            'Valor Gasto': []})
+
 
 @app.callback(
     Output('output7', 'children'),
