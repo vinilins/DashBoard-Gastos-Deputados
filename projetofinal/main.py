@@ -1,6 +1,7 @@
 import pandas as pd
 import dash
 import base64
+import dash_table
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -105,7 +106,7 @@ app.layout = html.Div(id='site', children=[
             html.H6(id='gastos1', children=[]),
             html.H6(id='gastos2', children=[]),
             html.Br(),
-            html.Img(id='gastos3', src='', style={'width': '200px', 'height': '80px', 'margin-left': '100px', 'margin-top': '-18px'})
+            html.Img(id='gastos3', src='', style={'width': '120px', 'height': '80px', 'margin-left': '100px', 'margin-top': '-18px'})
         ], style=conteudoleft),
 
          html.Label(id='conteudo-right', children=[
@@ -140,6 +141,16 @@ app.layout = html.Div(id='site', children=[
     html.Br(),
     html.Br(),
     html.Br(),
+    html.Div(id='output6', children=[
+        dcc.Checklist(
+            id='cheklist',
+            options=[
+                {'label': 'Mostrar Gastos do Deputado', 'value': 'Y'},
+            ],
+            values=[]
+        ),
+        html.Div(id='output7'),
+                                    ]),
     html.Div(id='output5'),
     html.Div(id='rodape', children=[html.Label(id='texto2', children=[html.Label(id='output2'),
                                                                       html.Label(id='output4'),
@@ -469,6 +480,49 @@ def update_image_src(image_path):
         image_path = 'estados/'+image_path[1]+'.png'
     encoded_image = base64.b64encode(open(image_path, 'rb').read())
     return 'data:image/png;base64,{}'.format(encoded_image.decode())
+
+
+def df_datalist(nome,ano):
+    arquivo = open('desc/nome-'+str(ano)+'.txt', 'r')
+    lista_nomes = arquivo.readlines()
+    controle = False
+    for i in range(len(lista_nomes)):
+        if lista_nomes[i] == nome+'\n':
+            ind = i
+            controle = True
+            break
+    arquivo.close()
+    if controle == True:
+        lista_desc = open('desc/desc-'+str(ano)+'.txt', 'r').readlines()[ind]
+        lista_desc=lista_desc.split(';')
+        arquivo.close()
+
+        lista_valores = open('desc/valores-'+str(ano)+'.txt', 'r').readlines()[ind]
+        lista_valores=lista_valores.split(';')
+        arquivo.close()
+
+        df = pd.DataFrame({ 'Descricao': lista_desc,
+                            'Valor Gasto': lista_valores})
+        return df
+
+@app.callback(
+    Output('output7', 'children'),
+    [Input('cheklist', 'values'),
+    Input('dropdown-2', 'value'),
+    Input('radio-box', 'value')])
+def update_graphs(input, input2 , input3):
+    if input != []:
+        df = df_datalist(input2,input3)
+        return [dash_table.DataTable(
+    data=df.to_dict('records'),
+    columns=[{'id': c, 'name': c} for c in df.columns],
+    style_cell={'textAlign': 'left','width': '150px'},
+                    style_table={
+        'maxHeight': '200px',
+        'overflowY': 'scroll',
+        'border': 'thin lightgrey solid'
+    }) 
+                                ]
 
 if __name__ == '__main__':
     app.run_server(debug=True)
