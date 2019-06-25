@@ -484,7 +484,7 @@ def update_image_src(image_path):
 
 def df_datalist(nome,ano):
     if str(nome) != 'None':
-        arquivo = open('desc/nome-'+str(ano)+'.txt', 'r')
+        arquivo = open('desc/nome-'+str(ano)+'.txt', 'r', encoding='latin-1')
         lista_nomes = arquivo.readlines()
         controle = False
     else:
@@ -497,11 +497,11 @@ def df_datalist(nome,ano):
             break
     arquivo.close()
     if controle == True:
-        lista_desc = open('desc/desc-'+str(ano)+'.txt', 'r').readlines()[ind]
+        lista_desc = open('desc/desc-'+str(ano)+'.txt', 'r', encoding='latin-1').readlines()[ind]
         lista_desc=lista_desc.split(';')
         arquivo.close()
 
-        lista_valores = open('desc/valores-'+str(ano)+'.txt', 'r').readlines()[ind]
+        lista_valores = open('desc/valores-'+str(ano)+'.txt', 'r',encoding='latin-1').readlines()[ind]
         lista_valores=lista_valores.split(';')
         arquivo.close()
 
