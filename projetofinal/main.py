@@ -146,8 +146,7 @@ app.layout = html.Div(id='site', children=[
             id='cheklist',
             options=[
                 {'label': 'Mostrar Gastos do Deputado', 'value': 'Y'},
-            ],
-            values=[]
+            ], value=[]
         ),
         html.Div(id='output7'),
                                     ]),
@@ -515,7 +514,7 @@ def df_datalist(nome,ano):
 
 @app.callback(
     Output('output7', 'children'),
-    [Input('cheklist', 'values'),
+    [Input('cheklist', 'value'),
     Input('dropdown-2', 'value'),
     Input('radio-box', 'value')])
 def update_graphs(input, input2 , input3):
