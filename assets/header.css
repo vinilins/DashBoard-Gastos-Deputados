@@ -1,0 +1,209 @@
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background-color: rgb(248, 249, 252);
+}
+
+.divisoesmenores1 {
+    box-sizing: border-box;
+    padding: 2%;
+    margin: 16px;
+    height: 19.3%;
+    background-color: white;
+    width: calc((100% / 2) - 32px);
+    float: right;
+    border: 1px solid black;
+}
+
+.divisoesmenores3 {
+    box-sizing: border-box;
+    padding: 2%;
+    margin: 16px;
+    height: 25%;
+    background-color: white;
+    width: calc((100% / 4) - 32px);
+    float: right;
+    border: 1px solid black;
+}
+
+.divisoesmenores4 {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 16px;
+    height: 37%;
+    background-color: white;
+    width: calc((100%) - 32px);
+    float: right;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.divisoesmenores2 {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 16px;
+    background-color: white;
+    height: 50%;
+    width: calc((100% / 2) - 36px);
+    float: right;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.lateraldireita {
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
+.divdasdivisoesmenores {
+    height: 85%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.875em‬;
+    float: right;
+}
+
+.superior {
+    height: 14%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+#texto-titulo {
+    font-size: 3vw;
+    margin-top: 2%;
+    display: inline-block;
+}
+
+.lateralesquerda {
+    width: 19.9%;
+    height: 99.7%;
+    background-color:rgb(137, 119, 224);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.cimalateralesquerda {
+    text-align: center;
+    width: 100%;
+    height: 20%;
+}
+
+.baixolateralesquerda {
+    width: 100%;
+    height: 80%;
+}
+
+#anos {
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    display:inline-block;
+    color: white;
+    opacity: 0.8;
+}
+
+#radio-box {
+    font-weight: 200;
+    margin-left: 10%;
+    color: white;
+}
+
+.text-radio-box {
+    font-weight: 200;
+    display: block;
+    font-size: 18px;
+    color: white;
+    opacity: 0.8;
+}
+
+#radio-box .text-radio-box input{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+#partido {
+    font-size: 17px; 
+    font-weight: 200;
+    margin-left: 10%;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    display: inline-block;
+    color: white;
+    opacity: 0.8;
+}
+
+#dropdown-partido {
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#parlamentar {
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 10%;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    display: inline-block;
+    color: white;
+    opacity: 0.8;
+}
+
+#dropdown-parlamentar {
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#gastos {
+    font-size: 17px; 
+    font-weight: 200;
+    margin-left: 10%;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    display: inline-block;
+    color: white;
+    opacity: 0.8;
+}
+
+#dropdown-comparacao {
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#texto-menu {
+    color: white;
+    font-size: 17px;
+    display: inline-block;
+    margin-top: 20%;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#imagemestado {
+    margin-top: 3%;
+    height: 104%;
+    width: 70%;
+}
+
+#estado {
+    margin-top: -5%;
+    display: block;
+}

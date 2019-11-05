@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+html, body {
+    font-family: 'roboto';
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: orange;
+}
