@@ -24,7 +24,6 @@ colors = {
     'text': '#7FDBFF'
 }
 
-
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
